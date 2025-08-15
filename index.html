@@ -24,20 +24,49 @@
       <div class="card-left"></div>
       <div class="card-front">
         <img src="./images/card-logo.svg" alt="rounded card logo" />
-        <input
-          type="number"
-          class="card-number"
-          placeholder="0000 0000 0000 0000"
-        />
-
-        <input type="text" placeholder="e.g. JANE APPLESEED" required />
-        <div class="exp-date">
-          <input type="text" placeholder="00" required />
-          <span>/</span>
-          <input type="text" placeholder="00" required />
+        <div class="card-number-container">
+          <input
+            type="number"
+            placeholder="0000 0000 0000 0000"
+            id="front-card-number"
+          />
+        </div>
+        <div class="card-front-name-container">
+          <div>
+            <input
+              type="text"
+              placeholder="JANE APPLESEED"
+              required
+              id="card-front-name"
+            />
+          </div>
+          <div class="exp-date">
+            <input
+              type="number"
+              placeholder="00"
+              required
+              id="card-front-expiry-month"
+            />
+            <span>/</span>
+            <input
+              type="number"
+              placeholder="00"
+              required
+              id="card-front-expiry-year"
+            />
+          </div>
         </div>
       </div>
-      <div class="card-back"></div>
+      <div class="card-back">
+        <div class="card-back-cvc-container">
+          <input
+            type="number"
+            placeholder="000"
+            id="card-back-cvc"
+            class="card-back-cvc"
+          />
+        </div>
+      </div>
       <!-- This is the second part of the site -->
       <div class="card-right">
         <form>
@@ -66,15 +95,20 @@
               <label>EXP. DATE (MM/YY)</label>
               <br />
               <div class="exp-date">
-                <input type="text" placeholder="MM" required />
-                <input type="text" placeholder="YY" required />
+                <input
+                  type="text"
+                  placeholder="MM"
+                  required
+                  id="expiry-month"
+                />
+                <input type="text" placeholder="YY" required id="expiry-year" />
               </div>
             </div>
 
             <div class="form-cvv">
               <label>CVC</label>
               <br />
-              <input type="text" placeholder="e.g. 123" required />
+              <input type="text" placeholder="e.g. 123" required id="cvc" />
             </div>
           </div>
           <!-- <div class="form-submit"> -->
@@ -91,5 +125,6 @@
         >. Coded by <a href="#">Deborah Okolo</a>.
       </div>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
