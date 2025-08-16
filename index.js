@@ -1,6 +1,5 @@
     // alert("JavaScript file is connected!");
 // Targeting all the input fields
-document.addEventListener("DOMContentLoaded", () => {
 const CardholderName = document.getElementById("cardholder-name");
 const CardNumber = document.getElementById("card-number");
 const ExpiryMonth = document.getElementById("expiry-month");
@@ -31,4 +30,46 @@ ExpiryYear.addEventListener("input", (e) => {
 CVC.addEventListener("input", (e) => {
   CVCPreview.value = e.target.value || '000';
 });
-});
+
+
+// Form validation for formats
+// Selecting the form
+const form = document.getElementById("basic-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let isValid=true;
+  });
+  //Validate the form name to be text only
+  CardholderName.addEventListener("input", (e) => {
+    const regex = /^[a-zA-Z\s]*$/;
+    if (!regex.test(e.target.value)) {
+      alert("Please enter a valid name.");
+    }
+  });
+  //Validate the form card number to be numbers only
+  CardNumber.addEventListener("input", (e) => {
+    const regex = /^[0-9\s]*$/;
+    if (!regex.test(e.target.value)) {
+      alert("Please enter a valid card number.");
+    }
+  });
+  //Validate the form expiry date to be numbers only
+  ExpiryMonth.addEventListener("input", (e) => {
+    const regex = /^[0-9]*$/;
+    if (!regex.test(e.target.value)) {
+      alert("Please enter a valid expiry month.");
+    }
+  });
+  ExpiryYear.addEventListener("input", (e) => {
+    const regex = /^[0-9]*$/;
+    if (!regex.test(e.target.value)) {
+      alert("Please enter a valid expiry year.");
+    }
+  });
+  //Validate the form CVC to be numbers only
+  CVC.addEventListener("input", (e) => {
+    const regex = /^[0-9]*$/;
+    if (!regex.test(e.target.value)) {
+      alert("Please enter a valid CVC.");
+    }
+  });
